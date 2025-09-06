@@ -1,7 +1,12 @@
 import { LinearGradient } from 'expo-linear-gradient';
+import { router } from 'expo-router';
 import React from 'react';
 import { Dimensions, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 export default function OnboardingScreen() {
+
+    const handleGetStarted = () => {
+        router.replace("/login")
+    };
     return (
         <View style={styles.container}>
             <Image
@@ -20,14 +25,14 @@ export default function OnboardingScreen() {
                 <Text style={styles.SubheadingText}>
                     Discover amazing products & shop with ease.
                 </Text>
-                <TouchableOpacity onPress={() => { /* Handle Get Started action */ }}>
+                <TouchableOpacity onPress={handleGetStarted}>
                     <LinearGradient
-                        colors={['#ff7e5f', '#feb47b']}
+                        colors={['#ff5f9cff', '#feb47b']}
                         start={{ x: 0, y: 0 }}
                         end={{ x: 1, y: 0 }}
                         style={styles.button}
                     >
-                    <Text style={styles.buttonText}>Get Started</Text>
+                        <Text style={styles.buttonText}>Get Started</Text>
                     </LinearGradient>
                 </TouchableOpacity>
             </View>
