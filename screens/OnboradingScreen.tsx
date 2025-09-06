@@ -18,8 +18,12 @@ export default function OnboardingScreen() {
             {/* Content */}
             <View style={styles.contentContainer}>
                 <Text style={{ color: '#fff', fontSize: 32, fontWeight: '600' }}>
-                    Onboarding Screen
+                    Welcome to Eshop
                 </Text>
+                <Text style={{ color: '#888', textAlign: 'center', fontSize: 16, fontWeight: '400' }}>
+                    Discover amazing products & shop with ease.
+                </Text>
+
             </View>
         </View>
     );
