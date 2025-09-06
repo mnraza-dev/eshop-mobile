@@ -1,8 +1,6 @@
 import { LinearGradient } from 'expo-linear-gradient';
 import React from 'react';
 import { Dimensions, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-
-
 export default function OnboardingScreen() {
     return (
         <View style={styles.container}>
@@ -10,7 +8,6 @@ export default function OnboardingScreen() {
                 style={styles.backgroundImage}
                 source={require('../assets/images/onboarding/onboarding.jpg')}
             />
-            {/* Overlay Gradient */}
             <LinearGradient
                 colors={['transparent', 'rgba(0,0,0,0.8)']}
                 style={styles.overlay}
@@ -23,7 +20,6 @@ export default function OnboardingScreen() {
                 <Text style={styles.SubheadingText}>
                     Discover amazing products & shop with ease.
                 </Text>
-
                 <TouchableOpacity onPress={() => { /* Handle Get Started action */ }}>
                     <LinearGradient
                         colors={['#ff7e5f', '#feb47b']}
@@ -31,16 +27,14 @@ export default function OnboardingScreen() {
                         end={{ x: 1, y: 0 }}
                         style={styles.button}
                     >
-                        <Text style={styles.buttonText}>Get Started</Text>
+                    <Text style={styles.buttonText}>Get Started</Text>
                     </LinearGradient>
                 </TouchableOpacity>
             </View>
         </View>
     );
 }
-
 const { width, height } = Dimensions.get('window');
-
 const styles = StyleSheet.create({
     container: {
         flex: 1,
