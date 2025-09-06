@@ -1,6 +1,6 @@
 import { LinearGradient } from 'expo-linear-gradient';
 import React from 'react';
-import { Dimensions, Image, StyleSheet, Text, View } from 'react-native';
+import { Dimensions, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 
 export default function OnboardingScreen() {
@@ -17,13 +17,23 @@ export default function OnboardingScreen() {
             />
             {/* Content */}
             <View style={styles.contentContainer}>
-                <Text style={{ color: '#fff', fontSize: 32, fontWeight: '600' }}>
+                <Text style={styles.HeadingText}>
                     Welcome to Eshop
                 </Text>
-                <Text style={{ color: '#888', textAlign: 'center', fontSize: 16, fontWeight: '400' }}>
+                <Text style={styles.SubheadingText}>
                     Discover amazing products & shop with ease.
                 </Text>
 
+                <TouchableOpacity onPress={() => { /* Handle Get Started action */ }}>
+                    <LinearGradient
+                        colors={['#ff7e5f', '#feb47b']}
+                        start={{ x: 0, y: 0 }}
+                        end={{ x: 1, y: 0 }}
+                        style={styles.button}
+                    >
+                        <Text style={styles.buttonText}>Get Started</Text>
+                    </LinearGradient>
+                </TouchableOpacity>
             </View>
         </View>
     );
@@ -37,7 +47,7 @@ const styles = StyleSheet.create({
         width: '100%',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#000', // fallback
+        backgroundColor: '#000',
     },
     backgroundImage: {
         width,
@@ -60,5 +70,30 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         paddingHorizontal: 20,
         paddingBottom: 50,
+        width,
     },
+    HeadingText: {
+        color: '#fff',
+        fontSize: 32,
+        fontWeight: '600'
+    },
+    SubheadingText: {
+        color: '#888',
+        fontSize: 18,
+        marginTop: 10,
+        textAlign: 'center'
+    },
+    button: {
+        width: width - 60,
+        marginTop: 20,
+        paddingVertical: 16,
+        paddingHorizontal: width * 0.2,
+        borderRadius: 16
+    },
+    buttonText: {
+        color: '#000',
+        textAlign: 'center',
+        fontSize: 16,
+        fontWeight: '600'
+    }
 });
