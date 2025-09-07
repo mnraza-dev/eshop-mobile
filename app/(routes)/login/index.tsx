@@ -8,7 +8,6 @@ export default function LoginScreen() {
             <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} className='flex-1 w-full justify-center items-center'>
                 <ScrollView
                     showsVerticalScrollIndicator={false}
-
                     className='flex-1 px-6'>
 
                     {/* Header */}
